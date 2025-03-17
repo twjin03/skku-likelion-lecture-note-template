@@ -1,0 +1,90 @@
+.homelogo {
+  height: 45vh;
+  background-color: white;
+  border-radius: 100%;
+  box-shadow: 0 0 10px greenyellow;
+  margin: 50px;
+}
+
+.homeLogos {
+  display: flex;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.homeStats {
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: greenyellow; /* Light blue background */
+  border-radius: 15px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  padding: 30px 50px; /* Comfortable padding */
+  max-width: 600px; /* Restrict width for a cleaner look */
+  margin: 20px auto; /* Center the element */
+  text-align: center; /* Center align the content */
+}
+
+.homeStats h1 {
+  font-size: 2rem; /* Larger text for emphasis */
+  color: #333; /* Dark color for text */
+  font-weight: 700; /* Bold text */
+  text-transform: uppercase; /* All caps for impact */
+  letter-spacing: 2px; /* Space between letters */
+  margin-bottom: 20px; /* Space below the heading */
+}
+
+.homeStats h1:before {
+  content: "📚 "; /* Book emoji for a fun touch */
+  font-size: 2.5rem; /* Larger emoji */
+  display: inline-block; /* Align emoji with text */
+  margin-right: 10px; /* Space between emoji and text */
+}
+
+.homeStats {
+  animation: fadeIn 1s ease-out; /* Smooth fade-in animation */
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.HomeGoToNotesButton {
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #61c2ff; /* Vibrant coral color */
+  color: white; /* White text */
+  font-size: 1.2rem; /* Slightly larger font for emphasis */
+  padding: 15px 30px; /* Spacious padding */
+  border-radius: 50px; /* Rounded HomeGoToNotesButton */
+  border: none; /* Remove border */
+  cursor: pointer; /* Pointer cursor on hover */
+  text-transform: uppercase; /* Uppercase text */
+  font-weight: bold; /* Bold text */
+  box-shadow: 0 4px 15px rgba(97, 97, 255, 0.6); /* Soft glowing shadow */
+  transition: all 0.3s ease; /* Smooth transition on hover */
+}
+
+.HomeGoToNotesButton:hover {
+  background-color: #61c2ff; /* Darker coral on hover */
+  box-shadow: 0 8px 25px rgba(97, 97, 255, 0.6); /* Larger glowing shadow */
+}
+
+.HomeGoToNotesButton:focus {
+  outline: none; /* Remove focus outline */
+}
+
+.HomeGoToNotesButton-container {
+  text-align: center; /* Center the HomeGoToNotesButton */
+  margin-top: 20px; /* Space above the HomeGoToNotesButton */
+}

@@ -1,0 +1,53 @@
+.notelist {
+  display: grid; /* Use grid layout */
+  grid-template-columns: repeat(4, 1fr); /* 4 columns with equal width */
+  gap: 20px; /* Space between the cards */
+  margin: 20px;
+}
+
+.note-card {
+  background-color: #fff; /* White background for contrast */
+  border-radius: 15px; /* Rounded corners */
+  padding: 20px; /* Comfortable padding inside the note-card */
+  width: 300px; /* Restrict note-card width */
+  box-shadow: 0 4px 15px greenyellow; /* Soft shadow for depth */
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
+  text-align: center; /* Center align text */
+  margin: 20px auto; /* Center the note-card on the page */
+}
+
+.note-card:hover {
+  transform: translateY(-10px); /* Lift the note-card slightly on hover */
+  box-shadow: 0 8px 25px greenyellow; /* Bigger shadow on hover */
+}
+
+.note-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px; /* Space below the header */
+}
+
+.note-card-header .icon {
+  font-size: 2rem; /* Icon size */
+  color: #8bc34a; /* Lime color for the icon */
+  margin-right: 10px; /* Space between icon and title */
+}
+
+.note-card-header h2 {
+  font-size: 1.5rem; /* Title font size */
+  color: #333; /* Dark text color */
+  font-weight: bold;
+}
+
+.note-card-description {
+  font-size: 1rem; /* Description font size */
+  color: #666; /* Lighter text color */
+  margin-bottom: 10px; /* Space below the description */
+}
+
+.note-card-date {
+  font-size: 0.9rem; /* Smaller font size for the date */
+  color: #8bc34a; /* Lime color for the date */
+  font-style: italic; /* Italicize the date */
+}
