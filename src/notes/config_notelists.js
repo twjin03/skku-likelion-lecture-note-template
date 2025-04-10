@@ -1,4 +1,4 @@
-import Note1 from "./Note1";
+import Note1 from "./list/Note1";
 export const notelists = {
   1: {
     title: "Lecture Note 1",
