@@ -1,5 +1,6 @@
 import Note1 from "./list/Note1";
 import Note2 from "./list/Note2";
+import Note3 from "./list/Note3";
 
 export const notelists = {
   1: {
@@ -13,5 +14,11 @@ export const notelists = {
     description: "API와 useState를 이용한 예제입니다.",
     page: <Note2 />,
     date: "2025-04-10",
+  },
+  3: {
+    title: "Lecture Note 3",
+    description: "Props Practice",
+    page: <Note3 />,
+    date: "2025-05-08",
   },
 };
