@@ -1,6 +1,8 @@
 import Note1 from "./list/Note1";
 import Note2 from "./list/Note2";
 import Note3 from "./list/Note3";
+import FirebaseNote from "./list/FirebaseNote";
+import CalendarTodoApp from "./list/skeleton";
 
 export const notelists = {
   1: {
@@ -21,4 +23,16 @@ export const notelists = {
     page: <Note3 />,
     date: "2025-05-08",
   },
+  4: {
+    title: "Firebase Note",
+    description: "Firebase Practice",
+    page: <FirebaseNote />,
+    date: "2025-05-15",
+  },
+  5: {
+    title: "총 집합",
+    description: "14주차 세션",
+    page: <CalendarTodoApp/>,
+    date: "2025-06-05",
+  }
 };
