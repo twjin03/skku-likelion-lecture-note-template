@@ -44,7 +44,7 @@ export default function CalendarTodoApp() {
           id: doc.id,
           ...doc.data(),
         }
-      })); 
+      }));
     });
     return () => unsubscribe();
   }, []);
@@ -69,10 +69,10 @@ export default function CalendarTodoApp() {
     if (newTodo.trim() === "") return; // 예외처리, 입력된 텍스트가 공백이 아닐 경우에만 Firestore에 문서를 추가
     // trim() -> 문자열 앞 뒤 공백 제거 
     await addDoc(collection(db, "todos"), { // 문서 추가, addDoc -> 첫 번째 인자로 collection 레퍼런스가 들어감 
-      text: newTodo, 
-      completed: false, 
+      text: newTodo,
+      completed: false,
       date: formattedSelected
-    }); 
+    });
     setNewTodo(""); // 입력 필드 초기화 
   };
 
@@ -87,7 +87,7 @@ export default function CalendarTodoApp() {
   // 삭제 후에는 별도의 상태 갱신 없이도 실시간 구독으로 UI가 자동 업데이트됩니다.
   // =========== 구현 3 끝 ===========
   const deleteTodo = async (id) => {
-    await deleteDoc(doc(db, "todos", id)); 
+    await deleteDoc(doc(db, "todos", id));
   };
 
 
@@ -102,8 +102,8 @@ export default function CalendarTodoApp() {
   // =========== 구현 4 끝 ===========
   const toggleComplete = async (id, currentStatus) => {
     await updateDoc(doc(db, "todos", id), {
-      completed: !currentStatus, 
-    }); 
+      completed: !currentStatus,
+    });
   };
 
   const startEdit = (id, text) => {
@@ -121,15 +121,20 @@ export default function CalendarTodoApp() {
   // updateDoc 함수에는 두 번째 인자로 업데이트할 필드를 객체 형태로 전달해야 하며, 이 경우 { text: editingText }를 사용합니다.
   // editingText가 공백이 아닌 경우에만 업데이트를 실행하고, 이후 편집 모드에서 벗어나기 위해 editingId와 editingText를 초기화하세요.
   // =========== 구현 5 끝 ===========
-  const saveEdit = async(id) => {
-    if (editingText.trim() === "") return; // editingText가 공백이 아닌 경우에만 업데이트를 실행
-    await updateDoc(doc(db, "todos", id), {
-      text: editingText,  // updateDoc 함수에는 두 번째 인자로 업데이트할 필드를 객체 형태로 전달해야 하며, 이 경우 { text: editingText }를 사용
-    });
+  const saveEdit = async (id) => {
+    // if (editingText.trim() === "") return; // editingText가 공백이 아닌 경우에만 업데이트를 실행
+    // await updateDoc(doc(db, "todos", id), {
+    //   text: editingText,  // updateDoc 함수에는 두 번째 인자로 업데이트할 필드를 객체 형태로 전달해야 하며, 이 경우 { text: editingText }를 사용
+    // });
+    if (editingText.trim()) {
+      await updateDoc(doc(db, "todos", id), {
+        text: editingText,  // updateDoc 함수에는 두 번째 인자로 업데이트할 필드를 객체 형태로 전달해야 하며, 이 경우 { text: editingText }를 사용
+      });
+    };
     setEditingId(null);
     setEditingText("");
   };
-  
+
 
   const tileContent = ({ date, view }) => {
     if (view !== "month") return null;
